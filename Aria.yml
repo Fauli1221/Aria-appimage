@@ -2,7 +2,7 @@ app: Aria
 
 ingredients:
   script:
-    - export version="v0.15.1"
+    - export version="setver"
     - echo "$version" > VERSION
     - wget -c "https://github.com/poppingmoon/aria/releases/download/$version/aria-$version-linux-x64.tar.gz"
     - mkdir -p aria

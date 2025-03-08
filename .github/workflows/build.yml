@@ -13,6 +13,7 @@ jobs:
       - name: Build
         run: |
          sudo apt install libfuse2 imagemagick
+         sed -i -e 's/server/${{ GITHUB_REF_NAME }}/g'
          ./build.sh
       - name: Release
         uses: softprops/action-gh-release@v2
