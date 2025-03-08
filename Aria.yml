@@ -1,0 +1,26 @@
+app: Aria
+
+ingredients:
+  script:
+    - export version="v1.0.0-beta.7"
+    - echo "$version" > VERSION
+    - wget -c "https://github.com/poppingmoon/aria/releases/download/$version/aria-$version-linux-x64.tar.gz"
+    - mkdir -p aria
+    - tar xf aria*.tar.gz -C ./aria
+
+script:
+  - cp -r ../aria/* ./usr/bin/;
+  - cp ./usr/bin/data/flutter_assets/assets/aria_android.png ./aria.png
+  -
+  - cat > aria.desktop <<\EOF
+  - [Desktop Entry]
+  - Name=Aria
+  - GenericName=Fediverse
+  - Comment=Fediverse App
+  - Keywords=fediverse;misskey;sharkey
+  - Exec=aria %f
+  - Icon=aria
+  - Terminal=false
+  - Type=Application
+  - Categories=Network;
+  - EOF
