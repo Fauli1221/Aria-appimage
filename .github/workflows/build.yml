@@ -13,7 +13,8 @@ jobs:
       - name: Build
         run: |
          sudo apt install libfuse2 imagemagick
-         sed -i -e 's/server/${{ github.ref_name }}/g' Aria.yml
+         export version=$(echo ${{ github.ref }} | cut -d '/' -f 3)
+         sed -i -e 's/server/$version/g' Aria.yml
          ./build.sh
       - name: Release
         uses: softprops/action-gh-release@v2
