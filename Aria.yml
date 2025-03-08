@@ -15,8 +15,8 @@ script:
   - cat > aria.desktop <<\EOF
   - [Desktop Entry]
   - Name=Aria
-  - GenericName=Fediverse
-  - Comment=Fediverse App
+  - GenericName=Misskey client
+  - Comment=A cross-platform Misskey client built with Flutter
   - Keywords=fediverse;misskey;sharkey
   - Exec=aria %f
   - Icon=aria
